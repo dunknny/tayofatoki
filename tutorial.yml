@@ -1,0 +1,80 @@
+#syntax turorial: Key value pairs, comments, object, attributes withing object, list#
+#Key Value Pairs#
+app: user-authetication
+port: 9000
+version: 1.7
+#Comments#
+microservice:
+  #syntax turorial: Key value pairs, comments, object, attributes withing object, list#
+  #Key Value Pairs#
+  app: user-authetication
+  port: 9000
+  version: 1.7
+  #List#
+parent-microservice:
+  #syntax turorial: Key value pairs, comments, object, attributes withing object, list#
+  #Key Value Pairs#
+  -microservice1:
+    app: user-authetication
+    port: 9000
+    version: 1.7
+    #List example 1#
+  -microservice2:
+    app: user-db
+    port: 9001
+    version: 
+      - 1.4
+      - 1.5
+      - 1.6
+    #List example 2#
+  -microservice3:
+    app: user-phone
+    port: 9002
+    version: [1.4, 1.5, 1.6]
+
+
+    #Kubernetes#
+
+
+    #Multiline string#
+multilinestring-with-linebreaks: |
+    this line stops here
+    then continues
+    then next
+    then end
+
+  #Multiline string#
+multilinestring-on-straight-line: >
+    this line doesnt stop here.
+    it continues,
+    then next,
+    then end.
+
+  #Environment Variables#
+env-variables-accesses-by-dollar-sign:
+    - app: $ThisVariable
+    - samehere: $VariableJH
+
+  #PlaceHolders#
+test-placeholders:
+    name: {{tayo.fatoki.is.a.place.holder}}
+   
+
+  #multiple yaml documents#
+test-placeholders:
+    name: {{tayo.fatoki.is.a.place.holder}}
+ 
+---
+
+env-variables-accesses-by-dollar-sign:
+    - app: $ThisVariable
+    - samehere: $VariableJH
+   
+
+
+
+
+
+
+
+
